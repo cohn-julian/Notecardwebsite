@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"  media="screen,projection"/>
+    </head>
+
+    <body>
+
+        <div class="form-center">
+            <form action="/create_set/" method="Post">
+                <div class="group">
+                    <input type="text" name="set_name" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Set Name</label>
+                </div>
+
+
+                <!-- set to be secondary color and pop -->
+                <input class="add-card" type="submit" value="Done">
+            </form>
+        </div>
+
+    </body>
+</html>
+

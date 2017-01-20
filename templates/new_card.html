@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"  media="screen,projection"/>
+        <title> Enter Card </title>
+    </head>
+
+    <body>
+
+        <div class="form-center">
+            <form action="/create/" method="Post">
+                <div class="group">
+                    <input type="text" name="term" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Card Term</label>
+                </div>
+
+                <div class="group">
+                    <input type="text" name="text" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Card Text</label>
+                </div>
+
+
+                <div class="group">
+                    <label class="select-label"> Select Set </label>
+                    <select name="set_chooser">
+                        {% for s in set %}
+                            <option value="{{s.name}}">{{s.name}}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+
+
+                <input class="add-card" type="submit" value="Done">
+            </form>
+        </div>
+
+    </body>
+</html>
+

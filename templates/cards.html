@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import materialize.css-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <a  href="/add"> <button class="add"><i class="material-icons md-48">add</i></button> </a>
+        <a href="/"> <i class="material-icons md-48"> home </i></a>
+        <br><br>
+        <div class="card-container">
+        {% for card in cards %}
+
+            <div class="ncard ">
+                <span class="title">{{card.term}}</span>
+                <hr/>
+                <p> {{card.text}} </p>
+                <a href="/delete/{{card.id}}"> Delete </a>
+                <br><br>
+            </div>
+
+        {% endfor %}
+        </div>
+        </div>
+    </body>
+</html>

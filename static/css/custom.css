@@ -1,0 +1,231 @@
+body{
+    font-family:'Roboto';
+    background:#FFF;
+}
+.card-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+}
+
+.add{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid red;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+
+    background-color: #ff5722;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+}
+
+
+.ncard{
+    text-align: center;
+    flex: 1;
+    height: auto;
+    min-height: 150px;
+    min-width: 300px;
+    margin: 10px;
+    padding: 5px;
+
+
+    background-color: #455a64;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+span.title{
+    font-size: 150%;
+}
+
+.ncard p{
+    display: none;
+}
+
+.ncard:hover p, .ncard:hover a{
+    display: block;
+}
+.ncard:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.ncard a{
+    color: #f5f5f5;
+    font-size: 80%;
+    display: none;
+}
+
+.ncard a:hover{
+    color: #ff5722;
+    letter-spacing: .9px;
+    font-size: 90%;
+}
+
+a.set-link{
+    font-size: 180%;
+    color: black;
+    height: 80px;
+}
+
+a.set-link:hover{
+    color: #ff5722;
+    letter-spacing: .9px;
+}
+
+.set-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+}
+/* add form */
+.form-center{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+form{
+    flex: 0;
+    height: auto;
+    width: auto;
+    margin-top: 200px;
+}
+
+.add-card{
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    background-color: #ff5722;
+    color: white;
+}
+.add-set-button{
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    background-color: #ff5722;
+    color: white;
+}
+.add-set-button a{
+    font-size: 250%;
+    color: black;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.group            { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input               {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus         { outline:none; }
+/* LABEL ======================================= */
+label                {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label        {
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar    { position:relative; display:block; width:300px; }
+.bar:before, .bar:after     {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from { background:#5264AE; }
+  to    { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:#5264AE; }
+  to    { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:#5264AE; }
+  to    { width:0; background:transparent; }
+}
+
+/* dropdown set selector */
+.select-label{
+    color: #999;
+}
+select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    background-color: white;
+    border: 2px solid #5264AE;
+    padding-left: 5px;
+    margin-left: 15px;
+    margin-top: 55px;
+    font-size: 19px;
+    color: black;
+    width: 300px;
+}
